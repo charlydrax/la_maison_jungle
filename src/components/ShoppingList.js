@@ -1,5 +1,7 @@
 import '../styles/shoppingList.css'
 import { plantList } from "../data/PlantList"
+import CareScale from "./CareScale"
+import PlantItem from './PlantItem'
 
 // const plantList = [
 //     'monstera',
@@ -10,10 +12,16 @@ import { plantList } from "../data/PlantList"
 // ]
 function ShoppingList() {
     return (
-        <ul>
-            {plantList.map((plant) => (
-                <li className={plant.isSpecialOffer == true ? "lmj-sales" : null} key={`${plant.id}`}>{ plant.name }{plant.isBestSale && <span>🔥</span>}{plant.isSpecialOffer && <div>Soldes</div>}</li>
-            ))}
+        <ul className="lmj-plant-list">
+            {plantList.map(({ id, cover, name, water, light }) => (
+                                <PlantItem
+                                    id={id}
+                                    cover={cover}
+                                    name={name}
+                                    water={water}
+                                    light={light}
+                                />
+                            ))}
         </ul>
     )
 }

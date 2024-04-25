@@ -4,6 +4,9 @@
 	display: flex;
 	flex-wrap: wrap;
 	max-width: 800px;
+	gap: 150px;
+	border: 1px solid brown;
+
 }
 
 .lmj-plant-item {
